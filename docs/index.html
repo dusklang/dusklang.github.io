@@ -8,45 +8,47 @@
         <div class="header">
             <h1>The Dusk Programming Language Blog</h1>
         </div>
-        <div class="content">
-            <h1>The Dusk Programming Language</h1>
-            <h2>Introduction</h2>
-            My name is Zach Wolfe. I started building Dusk for the same reason many things are built: I was frustrated with the alternatives. Every language I have ever tried has some aspects I appreciate, and others that drive me up the wall. My goal with Dusk is two-fold: one, to make a language that enables me to build high-quality software with as little frustration&mdash;and as much assistance&mdash;as possible, and two, to make the compiler and associated tools as high-quality as possible.
+        <div class="content-container">
+            <div class="content">
+                <h1>The Dusk Programming Language</h1>
+                <h2>Introduction</h2>
+                My name is Zach Wolfe. I started building Dusk for the same reason many things are built: I was frustrated with the alternatives. Every language I have ever tried has some aspects I appreciate, and others that drive me up the wall. My goal with Dusk is two-fold: one, to make a language that enables me to build high-quality software with as little frustration&mdash;and as much assistance&mdash;as possible, and two, to make the compiler and associated tools as high-quality as possible.
 
-            <p style="color:red">Note: neither this blog nor the language it is about are ready for prime-time. In fact, the compiler is not even released yet. On the off chance that someone has discovered this blog on their own, please stay tuned for an official announcement!</p>
+                <p style="color:red">Note: neither this blog nor the language it is about are ready for prime-time. In fact, the compiler is not even released yet. On the off chance that someone has discovered this blog on their own, please stay tuned for an official announcement!</p>
 
-            <h2>What is high-quality software?</h2>
-            There are many different kinds of software, and each one will have its own priorities; for example, a mobile application should use as little energy as possible in order to preserve battery life, while a 3D game for PC might want to utilize as much of the hardware as possible at the expense of energy usage. Still, there are guidelines that I believe can and should be applied to all software, from embedded systems and kernels, to AAA video games, to social media websites. Practical realities of making software sometimes interfere with these guidelines, and by no means do I claim to be better at following them than anyone reading this. These are simply ideals that I believe all of us programmers (including myself) should strive towards, and Dusk should make easier to do so.
-            <ul>
-                <li><b>Don't use more of the computer's resources than you need</b>: Modern computers are incredibly powerful, but they are not infinite. Use of resources including memory, persistent storage, CPU and GPU time and energy should be limited to only what is necessary to solve the problem at hand. By this guideline, an application that uses less of these resources is higher quality than one that uses more, all else being equal.</li>
-                <li><b>Don't use more of the <i>user's</i> resources than you need</b>: Even more valuable&mdash;and more limited&mdash;than the computer's resources are those of the humans using them.
-                    <ul>
-                        <li>Do not make them wait for anything without a very good reason. In cases where there is unavoidable latency, such as expensive computations or contacting a remote server, make every effort to hide this latency.</li>
-                        <li>Do not test their patience with hard-to-understand or misleading interfaces.</li>
-                    </ul>
-                </li>
-                <li><b>Do The Right Thing when possible:</b>
-                    <ul>
-                        <li>GUI applications should use one of the native UI libraries offered by the OS vendor, and follow the conventions of each OS they are targeting. For example, classic Win32 calls or WinUI on Windows, UIKit or SwiftUI on iOS, etc. Cross-platform UI libraries can be useful tools, but only insofar as they enable the exact same native apps that follow OS conventions to made with less code. Make no mistake: doing this on more than one platform is <i>much harder</i> than using Electron! There is only so much a programming language can do here, but I hope Dusk's features will enable a UI library that makes this a much more viable option.</li>
-                        <li>Accessibility is very important.</li>
-                    </ul>
-                </li>
-                <li><b>Do not drop frames.</b> All apps should run at a buttery smooth framerate, without stutter or inconsistent frame pacing.</li>
-                <li><b><i>Do</i> write reliable, bug-free software (with help).</b> Your compiler and associated tools should do everything they can to detect and notify you of bugs before you ship.</li>
-            </ul>
-            This is far from an exhaustive list; for one thing, many problems in software (such as invasive advertising) come down to business decisions, which are largely out of scope for any individual programmer or programming language to solve. But I think this will provide a good foundation for what I mean when I say "high-quality software."
+                <h2>What is high-quality software?</h2>
+                There are many different kinds of software, and each one will have its own priorities; for example, a mobile application should use as little energy as possible in order to preserve battery life, while a 3D game for PC might want to utilize as much of the hardware as possible at the expense of energy usage. Still, there are guidelines that I believe can and should be applied to all software, from embedded systems and kernels, to AAA video games, to social media websites. Practical realities of making software sometimes interfere with these guidelines, and by no means do I claim to be better at following them than anyone reading this. These are simply ideals that I believe all of us programmers (including myself) should strive towards, and Dusk should make easier to do so.
+                <ul>
+                    <li><b>Don't use more of the computer's resources than you need</b>: Modern computers are incredibly powerful, but they are not infinite. Use of resources including memory, persistent storage, CPU and GPU time and energy should be limited to only what is necessary to solve the problem at hand. By this guideline, an application that uses less of these resources is higher quality than one that uses more, all else being equal.</li>
+                    <li><b>Don't use more of the <i>user's</i> resources than you need</b>: Even more valuable&mdash;and more limited&mdash;than the computer's resources are those of the humans using them.
+                        <ul>
+                            <li>Do not make them wait for anything without a very good reason. In cases where there is unavoidable latency, such as expensive computations or contacting a remote server, make every effort to hide this latency.</li>
+                            <li>Do not test their patience with hard-to-understand or misleading interfaces.</li>
+                        </ul>
+                    </li>
+                    <li><b>Do The Right Thing when possible:</b>
+                        <ul>
+                            <li>GUI applications should use one of the native UI libraries offered by the OS vendor, and follow the conventions of each OS they are targeting. For example, classic Win32 calls or WinUI on Windows, UIKit or SwiftUI on iOS, etc. Cross-platform UI libraries can be useful tools, but only insofar as they enable the exact same native apps that follow OS conventions to made with less code. Make no mistake: doing this on more than one platform is <i>much harder</i> than using Electron! There is only so much a programming language can do here, but I hope Dusk's features will enable a UI library that makes this a much more viable option.</li>
+                            <li>Accessibility is very important.</li>
+                        </ul>
+                    </li>
+                    <li><b>Do not drop frames.</b> All apps should run at a buttery smooth framerate, without stutter or inconsistent frame pacing.</li>
+                    <li><b><i>Do</i> write reliable, bug-free software (with help).</b> Your compiler and associated tools should do everything they can to detect and notify you of bugs before you ship.</li>
+                </ul>
+                This is far from an exhaustive list; for one thing, many problems in software (such as invasive advertising) come down to business decisions, which are largely out of scope for any individual programmer or programming language to solve. But I think this will provide a good foundation for what I mean when I say "high-quality software."
 
-            <h2>What is Dusk?</h2>
-            As I mentioned, Dusk aims to both <i>be</i> high-quality software, as well as enable its users to write their own. I believe the best way to do this is to stay relatively close to the hardware. Dusk is a compiled language, and is not particularly shy about its influences.
-            <pre class="code">
-            fn main() {
-                print("Hello, world!\n")
-            }
-            </pre>
-            Its syntax is similar to <a href="https://rust-lang.org/">Rust</a> in a lot of ways. Its type system takes cues from <a href="https://swift.org/">Swift</a>'s, though without falling victim to <a href="https://www.cocoawithlove.com/blog/2016/07/12/type-checker-issues.html">exponential time</a> issues like that language. Other influences include <a href="https://www.circle-lang.org/">Circle</a>, <a href="https://ziglang.org/">Zig</a>, <a href="http://odin-lang.org/">Odin</a>, and <a href="https://youtu.be/uZgbKrDEzAs">Jai</a>.
+                <h2>What is Dusk?</h2>
+                As I mentioned, Dusk aims to both <i>be</i> high-quality software, as well as enable its users to write their own. I believe the best way to do this is to stay relatively close to the hardware. Dusk is a compiled language, and is not particularly shy about its influences.
+                <pre class="code">
+                fn main() {
+                    print("Hello, world!\n")
+                }
+                </pre>
+                Its syntax is similar to <a href="https://rust-lang.org/">Rust</a> in a lot of ways. Its type system takes cues from <a href="https://swift.org/">Swift</a>'s, though without falling victim to <a href="https://www.cocoawithlove.com/blog/2016/07/12/type-checker-issues.html">exponential time</a> issues like that language. Other influences include <a href="https://www.circle-lang.org/">Circle</a>, <a href="https://ziglang.org/">Zig</a>, <a href="http://odin-lang.org/">Odin</a>, and <a href="https://youtu.be/uZgbKrDEzAs">Jai</a>.
 
-            <p>
-            To be continued...
+                <p>
+                To be continued...
+            </div>
         </div>
     </body>
 </html>
